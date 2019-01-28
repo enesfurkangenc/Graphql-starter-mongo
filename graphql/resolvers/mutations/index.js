@@ -1,9 +1,9 @@
-const user = require("./user.mutation");
-const message = require("./message.mutation");
+const user = require('./user.mutation');
+const message = require('./message.mutation');
 
 const Mutation = {
   ...user,
-  ...message
-}
+  ...message,
+};
 
 module.exports = Mutation;

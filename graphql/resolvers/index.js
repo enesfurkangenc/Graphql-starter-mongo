@@ -1,14 +1,14 @@
 // Query resolvers
-const Query = require("./queries/Query");
-const Message = require("./queries/Message");
-const User = require("./queries/User");
+const Query = require('./queries/Query');
+const Message = require('./queries/Message');
+const User = require('./queries/User');
 
 // Mutation resolvers
-const Mutation = require("./mutations");
+const Mutation = require('./mutations');
 
-module.exports = { 
+module.exports = {
   Query,
   Message,
   User,
-  Mutation
-}
+  Mutation,
+};

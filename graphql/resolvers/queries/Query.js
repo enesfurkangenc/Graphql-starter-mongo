@@ -1,18 +1,20 @@
 const Query = {
   user: async (parent, args, { User }) => {
-    return await User.findById(args.id)
+    const user = await User.findById(args.id);
+    return user;
   },
   users: async (parent, args, { User }) => {
-    return await User.find({})
-      .sort({ 'createdAt': 'desc'})
+    const users = await User.find({}).sort({ createdAt: 'desc' });
+    return users;
   },
   message: async (parent, args, { Message }) => {
-    return await Message.findById(args.id)
+    const message = await Message.findById(args.id);
+    return message;
   },
   messages: async (parent, args, { Message }) => {
-    return await Message.find({})
-      .sort({'createdAt': 'desc'})
-  }
-}
+    const messages = await Message.find({}).sort({ createdAt: 'desc' });
+    return messages;
+  },
+};
 
 module.exports = Query;

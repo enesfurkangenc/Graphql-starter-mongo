@@ -19,10 +19,16 @@
     "graphql-import": "^0.7.1",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.4.7",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "chalk": "^2.4.2"
   },
   "devDependencies": {
-    "chalk": "^2.4.2",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-react": "^7.12.4",
     "nodemon": "^1.18.9"
   }
 }
