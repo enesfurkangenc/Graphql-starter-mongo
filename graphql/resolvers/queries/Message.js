@@ -6,4 +6,4 @@ const Message = {
   ,
 };
 
-module.exports = Message;
+export default Message;

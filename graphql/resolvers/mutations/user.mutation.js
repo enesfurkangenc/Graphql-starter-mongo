@@ -1,7 +1,7 @@
-const bcrypt = require('bcrypt');
-const token = require('../../../helpers/token');
+import bcrypt from 'bcrypt';
+import token from '../../../helpers/token';
 
-module.exports = {
+export default {
   createUser: async (parent, { data: { username, password } }, { User }) => {
     const user = await User.findOne({ username });
 

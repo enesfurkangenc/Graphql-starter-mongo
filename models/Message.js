@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-const { Schema } = require('mongoose');
-
+import mongoose, { Schema } from 'mongoose';
 
 const messageSchema = new Schema({
   user_id: {
@@ -17,4 +15,5 @@ const messageSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('message', messageSchema);
+const message = mongoose.model('message', messageSchema);
+export default message;

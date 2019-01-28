@@ -1,17 +1,20 @@
-const express = require('express');
-const morgan = require('morgan');
-const chalk = require('chalk');
-require('dotenv').config();
-const mongoose = require('mongoose');
-const { ApolloServer } = require('apollo-server-express');
-const { importSchema } = require('graphql-import');
+import express from 'express';
+import morgan from 'morgan';
+import chalk from 'chalk';
+import mongoose from 'mongoose';
+import { ApolloServer } from 'apollo-server-express';
+import { importSchema } from 'graphql-import';
+import dotenv from 'dotenv';
 
 // resolvers ..
-const resolvers = require('./graphql/resolvers');
+import resolvers from './graphql/resolvers';
 
 // Models
-const User = require('./models/User');
-const Message = require('./models/Message');
+import User from './models/User';
+import Message from './models/Message';
+
+// load env files
+dotenv.config();
 
 const server = new ApolloServer({
   typeDefs: importSchema('./graphql/schema.graphql'),

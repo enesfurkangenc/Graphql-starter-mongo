@@ -1,4 +1,6 @@
-module.exports = {
+
+
+export default {
   createMessage: async (parent, { data: { text, user_id } }, { Message }) => {
     const newUser = await new Message({
       text,

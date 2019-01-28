@@ -1,6 +1,5 @@
-const mongoose = require('mongoose');
-const { Schema } = require('mongoose');
-const bcrypt = require('bcrypt');
+import mongoose, { Schema } from 'mongoose';
+import bcrypt from 'bcrypt';
 
 const userSchema = new Schema({
   username: {
@@ -18,7 +17,7 @@ const userSchema = new Schema({
   },
 });
 
-userSchema.pre('save', function crytpo(next) {
+userSchema.pre('save', function crypto(next) {
   if (!this.isModified('password')) {
     return next();
   }
@@ -31,4 +30,5 @@ userSchema.pre('save', function crytpo(next) {
   return true;
 });
 
-module.exports = mongoose.model('user', userSchema);
+const user = mongoose.model('user', userSchema);
+export default user;
