@@ -1,6 +1,7 @@
 # Graphql Starter kit
 
 Database: MongoDB kullanılmıştır.
+Mesajlar icin subs olusturuldu. Id filtlereyerek dinleme yapabilirsiniz.
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
 
