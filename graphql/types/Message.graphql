@@ -18,3 +18,7 @@ input createMessageInput {
   text: String!
   user_id: String!
 }
+
+type Subscription {
+  messageSended(userId: ID): Message!
+}

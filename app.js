@@ -2,9 +2,10 @@ import express from 'express';
 import morgan from 'morgan';
 import chalk from 'chalk';
 import mongoose from 'mongoose';
-import { ApolloServer } from 'apollo-server-express';
+import { ApolloServer, PubSub } from 'apollo-server-express';
 import { importSchema } from 'graphql-import';
 import dotenv from 'dotenv';
+import http from 'http';
 
 // resolvers ..
 import resolvers from './graphql/resolvers';
@@ -16,11 +17,14 @@ import Message from './models/Message';
 // load env files
 dotenv.config();
 
+const pubsub = new PubSub();
+
 const server = new ApolloServer({
   typeDefs: importSchema('./graphql/schema.graphql'),
   resolvers,
   context: {
     User,
+    pubsub,
     Message,
   },
 });
@@ -47,6 +51,9 @@ mongoose.connect(process.env.DB_URI, { useNewUrlParser: true })
   .catch(e => console.log(chalk.red.bold(e)));
 server.applyMiddleware({ app });
 
-app.listen({ port: 4001 }, () => {
+const httpServer = http.createServer(app);
+server.installSubscriptionHandlers(httpServer);
+
+httpServer.listen({ port: 4001 }, () => {
   (console.log(chalk.red.bold(` 🦄  Server ready at http://localhost:4001${server.graphqlPath}`)));
 });

@@ -3,6 +3,7 @@
     "rules": {
         "camelcase": "off",
         "no-console": "off",
-        "no-underscore-dangle": "off"
+        "no-underscore-dangle": "off",
+        "max-len": "off"
     }
 }

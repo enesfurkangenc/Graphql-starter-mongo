@@ -3,5 +3,6 @@
 
 # import Query from './types/Message.graphql'
 # import Mutation from './types/Message.graphql'
+# import Subscription from './types/Message.graphql'
 
 # import Query from './types/Token.graphql'
